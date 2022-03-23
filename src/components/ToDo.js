@@ -7,22 +7,25 @@ const Btn = styled.button`
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   font-size: 10px;
+  margin-left: auto;
+`;
+
+const Txt = styled.div`
+  margin-right: 10px;
 `;
 
 const List = styled.div`
   margin: 10px;
-  text-align: center;
   font-family: 'Song Myung', serif;
   font-size: 20px;
   display: flex;
-  justify-content: center;
   opacity: 0.8;
 `;
 
 function ToDo({ text, onBtnClick }) {
   return (
     <List>
-      {text}
+      <Txt>😾 {text}</Txt>
       <Btn onClick={onBtnClick}>X</Btn>
     </List>
   );
