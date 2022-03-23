@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { actionCreators } from "../store";
@@ -10,8 +10,14 @@ const Btn = styled.button`
   margin-left: auto;
 `;
 
+const Eye = styled.span`
+  width: 40px;
+  cursor: pointer;
+`;
+
 const Txt = styled.div`
   margin-right: 10px;
+  text-decoration: ${(props) => props.deco};
 `;
 
 const List = styled.div`
@@ -23,9 +29,13 @@ const List = styled.div`
 `;
 
 function ToDo({ text, onBtnClick }) {
+  const [isDone, setIsDone] = useState(false);
+  const toggleDone = () => setIsDone(!isDone);
   return (
     <List>
-      <Txt>😾 {text}</Txt>
+      {/* <Txt> {text}</Txt> */}
+      <Eye onClick={toggleDone}>{isDone ? "😻" : "😾"}</Eye>
+      <Txt deco={isDone && "line-through"}>{text}</Txt>
       <Btn onClick={onBtnClick}>X</Btn>
     </List>
   );
