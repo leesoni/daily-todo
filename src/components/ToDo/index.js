@@ -36,7 +36,7 @@ function ToDo({ text, bool, onBtnClick, toggleDone, editToDo }) {
         height: "30px",
       }}
     >
-      <Eye onClick={clickEye}>{bool ? "😻" : "😾"}</Eye>
+      <Eye onClick={clickEye}>{bool ? "✅" : "📌"}</Eye>
       {isEdit ? (
         <form onSubmit={onSubmitEdit}>
           <input

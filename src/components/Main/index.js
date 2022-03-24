@@ -33,7 +33,7 @@ function App({ toDos, addToDo }) {
     <Container>
       <Title>
         <Emoji />時間は夢を裏切らない
-        <Emoji symbol=" 🥰" />
+        {/* <Emoji symbol="" /> */}
       </Title>
       <Date />
       <Time>
@@ -106,9 +106,9 @@ const List = styled.ul`
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.3);
   opacity: 0.8;
-  font-family: "Song Myung", serif;
+  font-family: 'Noto Sans JP', 'Gothic A1', sans-serif;
   font-size: 20px;
   padding: 10px 20px;
   max-height: 300px;
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
